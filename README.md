@@ -1,10 +1,10 @@
-# AWS EC2 Web Server Project (Apache + Troubleshooting)
+# AWS EC2 Web Server Project (Apache + Monitoring + Troubleshooting)
 
 ## Overview
 
-This project demonstrates how to deploy a web server using **Amazon EC2**, configure network access, and troubleshoot a real-world service outage.
+This project demonstrates how to deploy, monitor, and troubleshoot a web server using **Amazon EC2** and **CloudWatch**.
 
-The project includes launching an EC2 instance, installing Apache, hosting a website, and simulating a failure scenario by stopping the web server.
+The project includes launching an EC2 instance, installing Apache, hosting a website, simulating a failure, and configuring monitoring with CloudWatch alarms.
 
 ---
 
@@ -13,6 +13,7 @@ The project includes launching an EC2 instance, installing Apache, hosting a web
 * Amazon EC2
 * Security Groups (Firewall)
 * Amazon Linux 2023
+* Amazon CloudWatch
 
 ---
 
@@ -25,6 +26,8 @@ Public IP Address
 EC2 Instance (Linux)
 ⬇
 Apache Web Server
+⬇
+CloudWatch Monitoring & Alerts
 
 ---
 
@@ -89,6 +92,32 @@ Restarted the Apache service to restore website functionality.
 
 ---
 
+## 8. CloudWatch Monitoring (CPU Tracking)
+
+Configured Amazon CloudWatch to monitor EC2 CPU utilization.
+
+Simulated CPU load to observe how the system responds under stress.
+
+![CPU Spike](screenshots/08-cloudwatch-cpu-spike.png)
+
+---
+
+## 9. CloudWatch Alarm Configuration
+
+Created an alarm that triggers when CPU utilization exceeds 10%.
+
+![Alarm Created](screenshots/09-cloudwatch-alarm-created.png)
+
+---
+
+## 10. Alarm Recovery (Back to Normal)
+
+Stopped the CPU load and verified that the alarm returned to a healthy state.
+
+![Alarm OK](screenshots/10-cloudwatch-alarm-ok.png)
+
+---
+
 ## Key Skills Demonstrated
 
 * EC2 instance deployment and configuration
@@ -97,7 +126,10 @@ Restarted the Apache service to restore website functionality.
 * Security group (firewall) configuration
 * Troubleshooting service outages
 * Diagnosing connection issues
-* Restoring application availability
+* CloudWatch monitoring and metrics analysis
+* Alarm configuration and alerting
+* Simulating system load for testing
+* Observing and validating system recovery
 
 ---
 
